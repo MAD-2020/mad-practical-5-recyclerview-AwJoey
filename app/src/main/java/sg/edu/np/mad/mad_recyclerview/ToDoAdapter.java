@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -35,9 +36,10 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoViewHolder>{
         holder.view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.d("Alert", "test");
                 AlertDialog.Builder alert = new AlertDialog.Builder(v.getContext());
                 View view = LayoutInflater.from(v.getContext()).inflate(R.layout.layout_alert, null);
+                TextView toDoName = view.findViewById(R.id.textView2);
+                toDoName.setText(toDo.todoItem + "?");
                 alert.setTitle("Delete")
                         .setMessage("Are you sure you want to delete")
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
