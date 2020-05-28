@@ -41,7 +41,6 @@ public class ToDoAdapter extends RecyclerView.Adapter<ToDoViewHolder>{
                 TextView toDoName = view.findViewById(R.id.textView2);
                 toDoName.setText(toDo.todoItem + "?");
                 alert.setTitle("Delete")
-                        .setMessage("Are you sure you want to delete")
                         .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
